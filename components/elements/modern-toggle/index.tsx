@@ -50,9 +50,8 @@ export function ModernToggle() {
 
 export function ModernTogglePreview() {
   return (
-    <label className="demo-toggle enabled" aria-label="Toggle preview">
-      <input type="checkbox" defaultChecked className="sr-only" />
+    <button type="button" className="demo-toggle enabled" aria-label="Toggle preview">
       <span />
-    </label>
+    </button>
   );
 }
