@@ -2,11 +2,11 @@ import type { UIComponent } from "@/lib/component-types";
 
 export const doraemon3D: UIComponent = {
   slug: "3d-doraemon",
-  name: "Interactive 3D Doraemon",
+  name: "360° 3D Doraemon",
   category: "3D",
   description:
-    "A procedural Doraemon character built entirely with React Three Fiber and Three.js geometry, including the face, eyes, whiskers, bell, pocket, waving arms, feet, lighting, shadows and interactive orbit controls.",
-  tags: ["React Three Fiber", "Three.js", "Interactive", "3D", "Character", "Procedural"],
+    "A reference-matched all-sides Doraemon character built with React Three Fiber and Three.js. The model includes true front/side/back depth, cat ears, neutral arms, rear tail, wraparound collar, projected face and belly geometry, bell, pocket, feet and full orbit controls.",
+  tags: ["React Three Fiber", "Three.js", "360°", "3D Character", "Interactive", "Procedural"],
   preview: "3d-doraemon",
   theme: "blue",
   code: `"use client";
@@ -26,6 +26,8 @@ export default function DoraemonDemo() {
   );
 }
 
+// 360° model: front, left, right, back and 3/4 views.
+// Drag to rotate, wheel/pinch to zoom.
 // Props:
 // autoRotate?: boolean
 // controls?: boolean
