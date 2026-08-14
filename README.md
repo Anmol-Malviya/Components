@@ -9,6 +9,7 @@ A copy-ready React component gallery inspired by modern component marketplaces.
 - Dedicated detail page for every component
 - One-click JSX and CSS copy buttons
 - Responsive dark UI
+- Folder-per-component architecture
 - Data-driven component registry for easy expansion
 - Zero third-party UI dependencies
 
@@ -21,16 +22,49 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Component architecture
+
+Every UI element must have its own folder inside `components/elements`.
+
+```text
+components/
+  elements/
+    aurora-button/
+      index.tsx
+    neon-button/
+      index.tsx
+    glass-focus-card/
+      index.tsx
+    spotlight-card/
+      index.tsx
+    loading-dots/
+      index.tsx
+    ai-pulse-ring/
+      index.tsx
+    modern-toggle/
+      index.tsx
+    avatar-stack/
+      index.tsx
+```
+
+Each element folder owns:
+
+- Component metadata
+- Copy-ready React/JSX source
+- Copy-ready CSS source
+- Homepage live preview component
+
+`lib/components.ts` is only the central registry that imports these element definitions.
+
 ## Add a new component
 
-The library is intentionally simple.
+1. Create a new folder such as `components/elements/fancy-button/`.
+2. Add an `index.tsx` containing its metadata, code snippet, CSS snippet, and preview component.
+3. Import the definition inside `lib/components.ts` and add it to the `components` array.
+4. Import its preview inside `components/ComponentGallery.tsx` and map its preview key.
+5. Add any gallery-only demo styles to `app/globals.css`.
 
-1. Open `lib/components.ts`.
-2. Add a new object to the `components` array with `slug`, `name`, `category`, `description`, `tags`, `preview`, `theme`, `code`, and `css`.
-3. Add the live preview markup in `components/ComponentGallery.tsx` using the same `preview` key.
-4. Add the matching demo styles to `app/globals.css`.
-
-The component will automatically appear on the homepage, category filters, search results, and its own `/components/[slug]` detail page.
+The component will then appear on the homepage, category filters, search results, and its own `/components/[slug]` detail page.
 
 ## Current starter components
 
