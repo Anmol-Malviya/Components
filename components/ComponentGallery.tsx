@@ -13,6 +13,7 @@ import { ModernTogglePreview } from "@/components/elements/modern-toggle";
 import { AvatarStackPreview } from "@/components/elements/avatar-stack";
 import { Laptop3DPreview } from "@/components/elements/3d-laptop/preview";
 import { Doraemon3DPreview } from "@/components/elements/3d-doraemon/preview";
+import { FloatingRobot3DPreview } from "@/components/elements/3d-floating-robot/preview";
 
 export function CopyButton({
   value,
@@ -40,6 +41,8 @@ export function CopyButton({
 
 export function ComponentPreview({ type }: { type: string }) {
   switch (type) {
+    case "3d-floating-robot":
+      return <FloatingRobot3DPreview />;
     case "3d-doraemon":
       return <Doraemon3DPreview />;
     case "3d-laptop":
