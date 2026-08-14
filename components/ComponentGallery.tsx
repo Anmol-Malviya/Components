@@ -3,6 +3,14 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { UIComponent } from "@/lib/components";
+import { AuroraButtonPreview } from "@/components/elements/aurora-button";
+import { NeonButtonPreview } from "@/components/elements/neon-button";
+import { GlassFocusCardPreview } from "@/components/elements/glass-focus-card";
+import { SpotlightCardPreview } from "@/components/elements/spotlight-card";
+import { LoadingDotsPreview } from "@/components/elements/loading-dots";
+import { AIPulseRingPreview } from "@/components/elements/ai-pulse-ring";
+import { ModernTogglePreview } from "@/components/elements/modern-toggle";
+import { AvatarStackPreview } from "@/components/elements/avatar-stack";
 
 export function CopyButton({
   value,
@@ -22,98 +30,36 @@ export function CopyButton({
   }
 
   return (
-    <button
-      type="button"
-      className={`copy-button ${className}`}
-      onClick={copy}
-    >
+    <button type="button" className={`copy-button ${className}`} onClick={copy}>
       {copied ? "Copied ✓" : label}
     </button>
   );
 }
 
 export function ComponentPreview({ type }: { type: string }) {
-  const [enabled, setEnabled] = useState(true);
-
   switch (type) {
     case "aurora-button":
-      return (
-        <button className="demo-aurora-button">
-          <span>Start building</span>
-        </button>
-      );
-
+      return <AuroraButtonPreview />;
     case "neon-button":
-      return <button className="demo-neon-button">Deploy now</button>;
-
+      return <NeonButtonPreview />;
     case "glass-card":
-      return (
-        <div className="demo-glass-card">
-          <div className="demo-orb" />
-          <p>PRODUCTIVITY</p>
-          <h3>Focus mode</h3>
-          <span>03h 42m tracked today</span>
-        </div>
-      );
-
+      return <GlassFocusCardPreview />;
     case "spotlight-card":
-      return (
-        <div className="demo-spotlight-card">
-          <div className="demo-icon">✦</div>
-          <strong>Magic panel</strong>
-          <p>Subtle light follows the surface.</p>
-        </div>
-      );
-
+      return <SpotlightCardPreview />;
     case "loading-dots":
-      return (
-        <div className="demo-loading-dots" aria-label="Loading">
-          <span />
-          <span />
-          <span />
-        </div>
-      );
-
+      return <LoadingDotsPreview />;
     case "pulse-ring":
-      return (
-        <div className="demo-pulse-wrap">
-          <div className="demo-pulse-ring" />
-          <div className="demo-pulse-core">AI</div>
-        </div>
-      );
-
+      return <AIPulseRingPreview />;
     case "toggle":
-      return (
-        <button
-          type="button"
-          className={`demo-toggle ${enabled ? "enabled" : ""}`}
-          aria-pressed={enabled}
-          onClick={() => setEnabled((value) => !value)}
-        >
-          <span />
-        </button>
-      );
-
+      return <ModernTogglePreview />;
     case "avatar-stack":
-      return (
-        <div className="demo-avatar-stack">
-          <span>AM</span>
-          <span>KR</span>
-          <span>DR</span>
-          <span className="more">+8</span>
-        </div>
-      );
-
+      return <AvatarStackPreview />;
     default:
       return null;
   }
 }
 
-export function ComponentGallery({
-  components,
-}: {
-  components: UIComponent[];
-}) {
+export function ComponentGallery({ components }: { components: UIComponent[] }) {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
 
@@ -126,8 +72,7 @@ export function ComponentGallery({
     const normalized = query.trim().toLowerCase();
 
     return components.filter((component) => {
-      const matchesCategory =
-        category === "All" || component.category === category;
+      const matchesCategory = category === "All" || component.category === category;
       const matchesQuery =
         !normalized ||
         component.name.toLowerCase().includes(normalized) ||
