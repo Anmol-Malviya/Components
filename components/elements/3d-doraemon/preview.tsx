@@ -5,7 +5,7 @@ import { Doraemon3D } from "@/components/elements/3d-doraemon/Doraemon3D";
 export function Doraemon3DPreview() {
   return (
     <div
-      aria-label="Interactive 3D Doraemon preview"
+      aria-label="Reference-matched 3D Doraemon preview"
       style={{
         position: "relative",
         zIndex: 1,
@@ -13,31 +13,31 @@ export function Doraemon3DPreview() {
         height: 340,
         overflow: "hidden",
         background:
-          "radial-gradient(circle at 50% 34%, rgba(126,190,255,.3), transparent 35%), linear-gradient(180deg, #0e1b2c 0%, #08111d 100%)",
+          "radial-gradient(circle at 50% 35%, #8bc5ff 0%, #69a9ed 38%, #4a84cb 72%, #376eaf 100%)",
       }}
     >
       <div
         style={{
           position: "absolute",
-          inset: "14% 18% 4%",
+          inset: "8% 15% 4%",
           borderRadius: "50%",
-          background: "rgba(0,153,230,.18)",
-          filter: "blur(58px)",
+          background: "rgba(255,255,255,.16)",
+          filter: "blur(62px)",
           pointerEvents: "none",
         }}
       />
-      <Doraemon3D minHeight={340} autoRotate controls />
+      <Doraemon3D minHeight={340} autoRotate={false} controls background="transparent" />
       <span
         style={{
           position: "absolute",
           left: "50%",
-          bottom: 11,
+          bottom: 10,
           transform: "translateX(-50%)",
           padding: "5px 9px",
-          border: "1px solid rgba(255,255,255,.1)",
+          border: "1px solid rgba(255,255,255,.28)",
           borderRadius: 999,
-          color: "#8ea6be",
-          background: "rgba(5,12,21,.68)",
+          color: "#eef7ff",
+          background: "rgba(30,78,135,.44)",
           backdropFilter: "blur(9px)",
           fontSize: 8,
           fontWeight: 800,
@@ -46,7 +46,7 @@ export function Doraemon3DPreview() {
           pointerEvents: "none",
         }}
       >
-        DRAG · ZOOM · 3D
+        FRONT VIEW · DRAG · ZOOM
       </span>
     </div>
   );
