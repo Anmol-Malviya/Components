@@ -29,6 +29,10 @@ Every UI element has its own folder inside `components/elements`.
 ```text
 components/
   elements/
+    3d-doraemon/
+      Doraemon3D.tsx
+      index.ts
+      preview.tsx
     3d-laptop/
       Laptop3D.tsx
       index.ts
@@ -72,6 +76,7 @@ The component will then appear on the homepage, category filters, search results
 
 ## Current starter components
 
+- 3D Doraemon — procedural React Three Fiber character with idle motion, drag, zoom, lighting and shadows
 - 3D Laptop — interactive React Three Fiber component with drag, zoom, auto-rotate and replaceable screen content
 - Aurora Button
 - Neon Outline Button
