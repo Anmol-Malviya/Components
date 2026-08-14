@@ -34,7 +34,3 @@ export default function DoraemonDemo() {
 // minHeight?: number`,
   css: `/* No external CSS required. The component is self-contained. */`,
 };
-
-export { Doraemon3D } from "./Doraemon3D";
-export type { Doraemon3DProps } from "./Doraemon3D";
-export { Doraemon3DPreview } from "./preview";
