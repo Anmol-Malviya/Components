@@ -11,7 +11,7 @@ A copy-ready React component gallery inspired by modern component marketplaces.
 - Responsive dark UI
 - Folder-per-component architecture
 - Data-driven component registry for easy expansion
-- Zero third-party UI dependencies
+- Interactive 3D components with React Three Fiber
 
 ## Run locally
 
@@ -24,11 +24,15 @@ Open `http://localhost:3000`.
 
 ## Component architecture
 
-Every UI element must have its own folder inside `components/elements`.
+Every UI element has its own folder inside `components/elements`.
 
 ```text
 components/
   elements/
+    3d-laptop/
+      Laptop3D.tsx
+      index.ts
+      preview.tsx
     aurora-button/
       index.tsx
     neon-button/
@@ -54,20 +58,21 @@ Each element folder owns:
 - Copy-ready CSS source
 - Homepage live preview component
 
-`lib/components.ts` is only the central registry that imports these element definitions.
+`lib/components.ts` is the central registry that imports these element definitions.
 
 ## Add a new component
 
 1. Create a new folder such as `components/elements/fancy-button/`.
-2. Add an `index.tsx` containing its metadata, code snippet, CSS snippet, and preview component.
+2. Add its metadata, code snippet, CSS snippet, and preview component.
 3. Import the definition inside `lib/components.ts` and add it to the `components` array.
 4. Import its preview inside `components/ComponentGallery.tsx` and map its preview key.
-5. Add any gallery-only demo styles to `app/globals.css`.
+5. Add gallery-only demo styles only when the preview needs them.
 
 The component will then appear on the homepage, category filters, search results, and its own `/components/[slug]` detail page.
 
 ## Current starter components
 
+- 3D Laptop — interactive React Three Fiber component with drag, zoom, auto-rotate and replaceable screen content
 - Aurora Button
 - Neon Outline Button
 - Glass Focus Card
