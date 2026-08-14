@@ -7,11 +7,13 @@ import { aiPulseRing } from "@/components/elements/ai-pulse-ring";
 import { modernToggle } from "@/components/elements/modern-toggle";
 import { avatarStack } from "@/components/elements/avatar-stack";
 import { laptop3D } from "@/components/elements/3d-laptop";
+import { doraemon3D } from "@/components/elements/3d-doraemon";
 import type { UIComponent } from "@/lib/component-types";
 
 export type { UIComponent, ComponentTheme } from "@/lib/component-types";
 
 export const components: UIComponent[] = [
+  doraemon3D,
   laptop3D,
   auroraButton,
   neonButton,
