@@ -74,6 +74,10 @@ Each element folder owns:
 
 The component will then appear on the homepage, category filters, search results, and its own `/components/[slug]` detail page.
 
+## Contributing
+
+Community submissions are welcome. Read [CONTRIBUTING.md](./CONTRIBUTING.md) for component structure, validation steps, quality checks, and pull request guidelines.
+
 ## Current starter components
 
 - 3D Doraemon — procedural React Three Fiber character with idle motion, drag, zoom, lighting and shadows
