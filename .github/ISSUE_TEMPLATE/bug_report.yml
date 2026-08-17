@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible problem with a component or the gallery.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Anmol UI Components. Please include enough detail for someone else to reproduce the issue.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Component preview
+        - Copied component code
+        - Component detail page
+        - Search or filters
+        - 3D component
+        - Build or development setup
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: Name or slug of the affected component, if applicable.
+      placeholder: aurora-button
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      placeholder: Describe the actual behavior and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, Node.js version, device, or other relevant details.
+      placeholder: Chrome 140, Windows 11, Node 22
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, console output, or other useful details.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues before opening this report.
+          required: true
+        - label: I can reproduce this issue with the current repository version.
+          required: true
