@@ -1,0 +1,58 @@
+name: Component request
+description: Suggest a reusable UI component for the gallery.
+title: "[Component]: "
+body:
+  - type: markdown
+    attributes:
+      value: Propose a component that would be useful to other developers and fits the copy-ready gallery.
+  - type: input
+    id: name
+    attributes:
+      label: Component name
+      placeholder: Magnetic Button
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Button
+        - Card
+        - Navigation
+        - Form
+        - Loading / feedback
+        - 3D / interactive
+        - Layout
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: Explain where this component is useful and what problem it solves.
+    validations:
+      required: true
+  - type: textarea
+    id: api
+    attributes:
+      label: Desired API or behavior
+      description: List important props, interactions, states, or accessibility behavior.
+      placeholder: Props, states, hover behavior, keyboard support, responsive behavior...
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Add links or descriptions of visual references. Do not copy proprietary source code.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched the current gallery and existing issues for a similar component.
+          required: true
+        - label: The requested component can be implemented as reusable source code.
+          required: true
